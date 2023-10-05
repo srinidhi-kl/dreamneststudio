@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard</title>
+
+  <style>
+    img {
+      max-width: 200px;
+    }
+
+    #render-marriage,
+    #render-party,
+    #render-other {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .delete {
+      background-color: rgb(247, 39, 39);
+      outline: none;
+      border: none;
+      border-radius: 0.25rem;
+      padding: 0.75rem;
+      padding-inline: 1.25rem;
+      cursor: pointer;
+    }
+
+    .record {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      /* flex-direction: column; */
+    }
+
+    .delete {
+      background-color: rgb(244, 58, 58);
+      outline: none;
+      border: none;
+      border-radius: 0.25rem;
+      padding: 1rem;
+      padding-inline: 1.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <button id="log-out">Sign out</button>
+    <form id="image-form">
+      <select name="categories" id="categories">
+        <option value="marriage">Marriage</option>
+        <option value="party">Party</option>
+        <option value="other">Other</option>
+      </select>
+      <input type="file" id="image-input" accept="image/*">
+      <button>Submit</button>
+    </form>
+  </section>
+
+  <div>
+    <div id="render-marriage">
+      <h1>Marriage</h1>
+      <ul id="marriage-list"></ul>
+    </div>
+    <div id="render-party">
+      <h1>Party</h1>
+      <ul id="party-list"></ul>
+    </div>
+    <div id="render-other">
+      <h1>Other</h1>
+      <ul id="other-list"></ul>
+    </div>
+  </div>
+  <script src="./upload.js" type="module"> </script>
+</body>
+
+</html>
